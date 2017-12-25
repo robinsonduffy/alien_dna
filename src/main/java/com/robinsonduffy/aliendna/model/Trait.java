@@ -9,6 +9,10 @@ public abstract class Trait implements Comparable<Trait> {
         this.alleles = new ImmutablePair<>(Allele.random(), Allele.random());
     }
 
+    public Trait(Allele left, Allele right) {
+        this.alleles = new ImmutablePair<>(left, right);
+    }
+
     public Trait(ImmutablePair<Allele, Allele> alleles) {
         this.alleles = alleles;
     }
