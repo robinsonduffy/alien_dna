@@ -1,19 +1,25 @@
 package com.robinsonduffy.aliendna.model;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
-public abstract class Trait implements Comparable<Trait> {
+public class Trait implements Comparable<Trait> {
     private ImmutablePair<Allele, Allele> alleles;
+    private String marker;
 
-    public Trait() {
-        this.alleles = new ImmutablePair<>(Allele.random(), Allele.random());
+    public Trait(String marker) {
+        this(marker, new ImmutablePair<>(Allele.random(), Allele.random()));
     }
 
-    public Trait(Allele left, Allele right) {
-        this.alleles = new ImmutablePair<>(left, right);
+    public Trait(String marker, Allele left, Allele right) {
+        this(marker, new ImmutablePair<>(left, right));
     }
 
-    public Trait(ImmutablePair<Allele, Allele> alleles) {
+    public Trait(String marker, ImmutablePair<Allele, Allele> alleles) {
+        if (!StringUtils.isAlpha(marker)) {
+            throw new IllegalArgumentException("The marker must be letters");
+        }
+        this.marker = marker.toUpperCase();
         this.alleles = alleles;
     }
 
@@ -21,15 +27,17 @@ public abstract class Trait implements Comparable<Trait> {
         return alleles;
     }
 
-    public abstract String getMarker();
+    public String getMarker(){
+        return marker;
+    };
 
     @Override
     public int compareTo(Trait o) {
         return this.getMarker().compareTo(o.getMarker());
     }
 
-    public Trait mergeWith(Trait o) {
-        // this performs the actual merging of the two traits creating the new trait following the rules of Mendelian Genetics
+    @Override
+    public String toString() {
         return null;
     }
 }
