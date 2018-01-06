@@ -41,7 +41,7 @@ public class TraitTest {
     @Test(dataProvider = "nonAlphaMarkerProvider",
             expectedExceptions = {IllegalArgumentException.class})
     public void test_nonAlphaMarker(String marker){
-        final Trait trait = new Trait(marker);
+        new Trait(marker);
     }
 
     @DataProvider(name = "alphaMarkerProvider")
@@ -59,5 +59,26 @@ public class TraitTest {
         final Trait trait = new Trait(marker);
         assertEquals(trait.getMarker(), expectedResult);
     }
+
+    @Test (expectedExceptions = {IllegalArgumentException.class})
+    public void test_nullAlleles(){
+        new Trait("A", null);
+    }
+
+    @Test (expectedExceptions = {IllegalArgumentException.class})
+    public void test_nullAllele_left(){
+        new Trait("A", null, Allele.DOMINANT);
+    }
+
+    @Test (expectedExceptions = {IllegalArgumentException.class})
+    public void test_nullAllele_right(){
+        new Trait("A", Allele.DOMINANT, null);
+    }
+
+    @Test (expectedExceptions = {IllegalArgumentException.class})
+    public void test_nullAllele_both(){
+        new Trait("A", null, null);
+    }
+
 
 }

@@ -19,6 +19,9 @@ public class Trait implements Comparable<Trait> {
         if (!StringUtils.isAlpha(marker)) {
             throw new IllegalArgumentException("The marker must be letters");
         }
+        if (alleles == null || alleles.getLeft() == null || alleles.getRight() == null) {
+            throw new IllegalArgumentException("Must provide valid alleles");
+        }
         this.marker = marker.toUpperCase();
         this.alleles = alleles;
     }
