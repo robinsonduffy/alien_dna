@@ -2,6 +2,8 @@ package com.robinsonduffy.aliendna.model;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.MutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 
 public class Trait implements Comparable<Trait> {
     private ImmutablePair<Allele, Allele> alleles;
@@ -41,6 +43,14 @@ public class Trait implements Comparable<Trait> {
 
     @Override
     public String toString() {
-        return null;
+        String leftMarker = alleles.left.equals(Allele.DOMINANT) ? marker : marker.toLowerCase();
+        String rightMarker = alleles.right.equals(Allele.DOMINANT) ? marker : marker.toLowerCase();
+
+        if (alleles.left.equals(Allele.DOMINANT)) {
+            return leftMarker + rightMarker;
+        } else {
+            return rightMarker + leftMarker;
+        }
+
     }
 }
