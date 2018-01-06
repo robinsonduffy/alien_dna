@@ -3,6 +3,7 @@ package com.robinsonduffy.aliendna.model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class PunnettSquare {
 
@@ -23,6 +24,10 @@ public class PunnettSquare {
 
     public List<Trait> getTraits() {
         return traits;
+    }
+
+    public Trait getRandomTrait(){
+        return traits.get(ThreadLocalRandom.current().nextInt(traits.size()));
     }
 
     @Override
