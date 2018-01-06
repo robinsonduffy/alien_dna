@@ -8,19 +8,63 @@ import java.util.List;
 
 public class PunnettSquareTest {
 
-    @DataProvider(name = "TraitsProvider")
+    @DataProvider(name = "traitsProvider")
 
-    public static Object[][] TraitsProvider() {
-
-        return new Object[][] { { "testuser_1", "Test@123",null }, { "testuser_1", "Test@123" ,null}};
+    public static Object[][] traitsProvider() {
+        return new Object[][] {
+                {
+                    new Trait("A", Allele.DOMINANT, Allele.DOMINANT),
+                    new Trait("A", Allele.DOMINANT, Allele.DOMINANT),
+                    "[AA, AA, AA, AA]"
+                },
+                {
+                    new Trait("A", Allele.DOMINANT, Allele.DOMINANT),
+                    new Trait("A", Allele.DOMINANT, Allele.RECESSIVE),
+                    "[AA, AA, Aa, Aa]"
+                },
+                {
+                    new Trait("A", Allele.DOMINANT, Allele.DOMINANT),
+                    new Trait("A", Allele.RECESSIVE, Allele.RECESSIVE),
+                    "[Aa, Aa, Aa, Aa]"
+                },
+                {
+                    new Trait("A", Allele.DOMINANT, Allele.RECESSIVE),
+                    new Trait("A", Allele.DOMINANT, Allele.DOMINANT),
+                    "[AA, AA, Aa, Aa]"
+                },
+                {
+                    new Trait("A", Allele.DOMINANT, Allele.RECESSIVE),
+                    new Trait("A", Allele.DOMINANT, Allele.RECESSIVE),
+                    "[AA, Aa, Aa, aa]"
+                },
+                {
+                    new Trait("A", Allele.DOMINANT, Allele.RECESSIVE),
+                    new Trait("A", Allele.RECESSIVE, Allele.RECESSIVE),
+                    "[Aa, Aa, aa, aa]"
+                },
+                {
+                    new Trait("A", Allele.RECESSIVE, Allele.RECESSIVE),
+                    new Trait("A", Allele.DOMINANT, Allele.DOMINANT),
+                    "[Aa, Aa, Aa, Aa]"
+                },
+                {
+                    new Trait("A", Allele.RECESSIVE, Allele.RECESSIVE),
+                    new Trait("A", Allele.DOMINANT, Allele.RECESSIVE),
+                    "[Aa, Aa, aa, aa]"
+                },
+                {
+                    new Trait("A", Allele.RECESSIVE, Allele.RECESSIVE),
+                    new Trait("A", Allele.RECESSIVE, Allele.RECESSIVE),
+                    "[aa, aa, aa, aa]"
+                }
+        };
 
     }
-
-    @Test(dataProvider = "TraitsProvider", enabled = false)
-    public void test_AABB(Trait trait1, Trait trait2, List<Trait> expectedTraits){
+    @Test(dataProvider = "traitsProvider")
+    public void test_AABB(Trait trait1, Trait trait2, String expectedTraits){
         final PunnettSquare punnettSquare = new PunnettSquare(trait1, trait2);
 
-        //Assert.assertEquals(punnettSquare.getTraits(), expectedTraits);
+        Assert.assertEquals(punnettSquare.toString(), expectedTraits);
     }
 
     @DataProvider(name = "nullTraitsProvider")
