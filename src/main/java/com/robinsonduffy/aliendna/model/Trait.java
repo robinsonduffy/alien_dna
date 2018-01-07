@@ -38,7 +38,11 @@ public class Trait implements Comparable<Trait> {
 
     @Override
     public int compareTo(Trait o) {
-        return this.toString().compareTo(o.toString());
+        if (this.getMarker().equals(o.getMarker())) {
+            return this.toString().compareTo(o.toString());
+        } else {
+            return this.getMarker().compareTo(o.getMarker());
+        }
     }
 
     @Override
