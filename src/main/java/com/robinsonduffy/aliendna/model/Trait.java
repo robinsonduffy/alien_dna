@@ -55,6 +55,20 @@ public class Trait implements Comparable<Trait> {
         } else {
             return rightMarker + leftMarker;
         }
+    }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (this.getClass() != obj.getClass()) {
+            return false;
+        }
+        Trait trait = (Trait) obj;
+        return this.toString().equals(trait.toString());
     }
 }

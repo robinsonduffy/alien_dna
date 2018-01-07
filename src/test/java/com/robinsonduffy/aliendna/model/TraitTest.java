@@ -80,5 +80,36 @@ public class TraitTest {
         new Trait("A", null, null);
     }
 
+    @Test
+    public void test_equals_true() {
+        assertEquals(new Trait("A", Allele.DOMINANT, Allele.RECESSIVE),
+                new Trait("A", Allele.RECESSIVE, Allele.DOMINANT));
+
+        assertEquals(new Trait("A", Allele.DOMINANT, Allele.RECESSIVE),
+                new Trait("A", Allele.DOMINANT, Allele.RECESSIVE));
+    }
+
+    @Test
+    public void test_equals_false() {
+        assertNotEquals(new Trait("A", Allele.DOMINANT, Allele.DOMINANT),
+                new Trait("A", Allele.DOMINANT, Allele.RECESSIVE));
+
+        assertNotEquals(new Trait("A", Allele.DOMINANT, Allele.RECESSIVE),
+                new Trait("B", Allele.DOMINANT, Allele.RECESSIVE));
+    }
+
+    @Test
+    public void test_equals_null() {
+        Trait trait = new Trait("A");
+        assertFalse(trait.equals(null));
+    }
+
+    @Test
+    public void test_equals_same() {
+        Trait trait = new Trait("A");
+        assertTrue(trait.equals(trait));
+    }
+
+
 
 }

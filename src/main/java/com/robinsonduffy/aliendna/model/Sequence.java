@@ -39,6 +39,21 @@ public class Sequence {
         return traits.toString();
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (this.getClass() != obj.getClass()) {
+            return false;
+        }
+        Sequence sequence = (Sequence) obj;
+        return this.toString().equals(sequence.toString());
+    }
+
     static public Sequence from(Sequence sequence1, Sequence sequence2) {
         if (!sequence1.getMarkers().equals(sequence2.getMarkers())){
             throw new IllegalArgumentException("Sequences are not compatible");

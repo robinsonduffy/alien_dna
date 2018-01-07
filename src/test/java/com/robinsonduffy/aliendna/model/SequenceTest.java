@@ -118,4 +118,39 @@ public class SequenceTest {
         sequence.add(traitA);
         sequence.getTrait("B");
     }
+
+    @Test
+    public void test_equals_true() {
+        Sequence sequence1 = new Sequence();
+        sequence1.add(new Trait("A", Allele.DOMINANT, Allele.RECESSIVE));
+        sequence1.add(new Trait("B", Allele.DOMINANT, Allele.DOMINANT));
+        Sequence sequence2 = new Sequence();
+        sequence2.add(new Trait("A", Allele.DOMINANT, Allele.RECESSIVE));
+        sequence2.add(new Trait("B", Allele.DOMINANT, Allele.DOMINANT));
+
+        assertTrue(sequence1.equals(sequence2));
+    }
+
+    @Test
+    public void test_equals_false() {
+        Sequence sequence1 = new Sequence();
+        sequence1.add(new Trait("A"));
+        Sequence sequence2 = new Sequence();
+        sequence2.add(new Trait("B"));
+
+        assertFalse(sequence1.equals(sequence2));
+    }
+
+    @Test
+    public void test_equals_null() {
+        Sequence sequence = new Sequence();
+        assertFalse(sequence.equals(null));
+    }
+
+    @Test
+    public void test_equals_same() {
+        Sequence sequence = new Sequence();
+        assertTrue(sequence.equals(sequence));
+    }
+
 }

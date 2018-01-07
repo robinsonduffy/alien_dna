@@ -81,5 +81,45 @@ public class PunnettSquareTest {
         new PunnettSquare(trait1, trait2);
     }
 
+    @Test
+    public void test_equals_true() {
+        PunnettSquare punnettSquare1 = new PunnettSquare(new Trait("A", Allele.DOMINANT, Allele.DOMINANT),
+                new Trait("A", Allele.DOMINANT, Allele.RECESSIVE));
+
+        PunnettSquare punnettSquare2 = new PunnettSquare(new Trait("A", Allele.DOMINANT, Allele.DOMINANT),
+                new Trait("A", Allele.DOMINANT, Allele.RECESSIVE));
+
+        Assert.assertTrue(punnettSquare1.equals(punnettSquare2));
+    }
+
+    @Test
+    public void test_equals_same () {
+        PunnettSquare punnettSquare1 = new PunnettSquare(new Trait("A", Allele.DOMINANT, Allele.DOMINANT),
+                new Trait("A", Allele.DOMINANT, Allele.RECESSIVE));
+
+        Assert.assertTrue(punnettSquare1.equals(punnettSquare1));
+    }
+
+    @Test
+    public void test_equals_null () {
+        PunnettSquare punnettSquare1 = new PunnettSquare(new Trait("A", Allele.DOMINANT, Allele.DOMINANT),
+                new Trait("A", Allele.DOMINANT, Allele.RECESSIVE));
+
+        Assert.assertFalse(punnettSquare1.equals(null));
+    }
+
+    @Test
+    public void test_equals_false() {
+        PunnettSquare punnettSquare1 = new PunnettSquare(new Trait("A", Allele.DOMINANT, Allele.DOMINANT),
+                new Trait("A", Allele.DOMINANT, Allele.RECESSIVE));
+
+        PunnettSquare punnettSquare2 = new PunnettSquare(new Trait("A", Allele.DOMINANT, Allele.RECESSIVE),
+                new Trait("A", Allele.DOMINANT, Allele.RECESSIVE));
+
+        Assert.assertFalse(punnettSquare1.equals(punnettSquare2));
+    }
+
+
+
 
 }

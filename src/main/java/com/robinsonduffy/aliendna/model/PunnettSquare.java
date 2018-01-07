@@ -34,4 +34,19 @@ public class PunnettSquare {
     public String toString() {
         return traits.toString();
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (this.getClass() != obj.getClass()) {
+            return false;
+        }
+        PunnettSquare punnettSquare = (PunnettSquare) obj;
+        return this.toString().equals(punnettSquare.toString());
+    }
 }
