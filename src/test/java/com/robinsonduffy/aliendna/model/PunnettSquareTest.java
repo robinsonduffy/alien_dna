@@ -119,6 +119,27 @@ public class PunnettSquareTest {
         Assert.assertFalse(punnettSquare1.equals(punnettSquare2));
     }
 
+    @Test
+    public void test_hashCode_same() {
+        PunnettSquare punnettSquare1 = new PunnettSquare(new Trait("A", Allele.DOMINANT, Allele.DOMINANT),
+                new Trait("A", Allele.DOMINANT, Allele.RECESSIVE));
+
+        PunnettSquare punnettSquare2 = new PunnettSquare(new Trait("A", Allele.DOMINANT, Allele.DOMINANT),
+                new Trait("A", Allele.DOMINANT, Allele.RECESSIVE));
+
+        Assert.assertEquals(punnettSquare1.hashCode(), punnettSquare2.hashCode());
+    }
+
+    @Test
+    public void test_hashCode_different() {
+        PunnettSquare punnettSquare1 = new PunnettSquare(new Trait("A", Allele.DOMINANT, Allele.DOMINANT),
+                new Trait("A", Allele.DOMINANT, Allele.RECESSIVE));
+
+        PunnettSquare punnettSquare2 = new PunnettSquare(new Trait("A", Allele.DOMINANT, Allele.RECESSIVE),
+                new Trait("A", Allele.DOMINANT, Allele.RECESSIVE));
+
+        Assert.assertNotEquals(punnettSquare1.hashCode(), punnettSquare2.hashCode());
+    }
 
 
 

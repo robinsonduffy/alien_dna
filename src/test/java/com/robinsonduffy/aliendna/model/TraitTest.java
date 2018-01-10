@@ -110,6 +110,24 @@ public class TraitTest {
         assertTrue(trait.equals(trait));
     }
 
+    @Test
+    public void test_hashCode_same() {
+        assertEquals(new Trait("A", Allele.DOMINANT, Allele.RECESSIVE).hashCode(),
+                new Trait("A", Allele.RECESSIVE, Allele.DOMINANT).hashCode());
+
+        assertEquals(new Trait("A", Allele.DOMINANT, Allele.RECESSIVE).hashCode(),
+                new Trait("A", Allele.DOMINANT, Allele.RECESSIVE).hashCode());
+    }
+
+    @Test
+    public void test_hashCode_different() {
+        assertNotEquals(new Trait("A", Allele.DOMINANT, Allele.DOMINANT).hashCode(),
+                new Trait("A", Allele.DOMINANT, Allele.RECESSIVE).hashCode());
+
+        assertNotEquals(new Trait("A", Allele.DOMINANT, Allele.RECESSIVE).hashCode(),
+                new Trait("B", Allele.DOMINANT, Allele.RECESSIVE).hashCode());
+    }
+
 
 
 }

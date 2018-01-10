@@ -5,6 +5,8 @@ import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.MutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
+import java.util.Objects;
+
 public class Trait implements Comparable<Trait> {
     private ImmutablePair<Allele, Allele> alleles;
     private String marker;
@@ -70,5 +72,10 @@ public class Trait implements Comparable<Trait> {
         }
         Trait trait = (Trait) obj;
         return this.toString().equals(trait.toString());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.toString()) * 37;
     }
 }

@@ -3,6 +3,7 @@ package com.robinsonduffy.aliendna.model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -52,6 +53,11 @@ public class Sequence {
         }
         Sequence sequence = (Sequence) obj;
         return this.toString().equals(sequence.toString());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.toString()) * 37;
     }
 
     static public Sequence from(Sequence sequence1, Sequence sequence2) {

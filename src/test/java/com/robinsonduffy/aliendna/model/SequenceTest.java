@@ -153,4 +153,27 @@ public class SequenceTest {
         assertTrue(sequence.equals(sequence));
     }
 
+    @Test
+    public void test_hashCode_same() {
+        Sequence sequence1 = new Sequence();
+        sequence1.add(new Trait("A", Allele.DOMINANT, Allele.RECESSIVE));
+        sequence1.add(new Trait("B", Allele.DOMINANT, Allele.DOMINANT));
+        Sequence sequence2 = new Sequence();
+        sequence2.add(new Trait("A", Allele.DOMINANT, Allele.RECESSIVE));
+        sequence2.add(new Trait("B", Allele.DOMINANT, Allele.DOMINANT));
+
+        assertEquals(sequence1.hashCode(), sequence2.hashCode());
+    }
+
+    @Test
+    public void test_hashCode_different() {
+        Sequence sequence1 = new Sequence();
+        sequence1.add(new Trait("A"));
+        Sequence sequence2 = new Sequence();
+        sequence2.add(new Trait("B"));
+
+
+        assertNotEquals(sequence1.hashCode(), sequence2.hashCode());
+    }
+
 }
