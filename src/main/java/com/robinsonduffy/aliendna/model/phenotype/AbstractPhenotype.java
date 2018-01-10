@@ -13,7 +13,7 @@ public abstract class AbstractPhenotype {
     public abstract List<Pair<String, Allele>> getExpression();
 
     /*
-     * This determines of the phenotype is expressed by the sequence
+     * This determines if the phenotype is expressed by the sequence
      * (which may include other traits not related to this phenotype)
      */
     public boolean isExpressed(final Sequence sequence) {
@@ -29,7 +29,7 @@ public abstract class AbstractPhenotype {
     }
 
     /*
-     * This determines of the phenotype is expressed by the sequence
+     * This determines if the phenotype is expressed by the sequence
      * (and that no other traits unrelated to this phenotype are included in the sequence)
      */
     public boolean isStrictlyExpressed(final Sequence sequence) {
