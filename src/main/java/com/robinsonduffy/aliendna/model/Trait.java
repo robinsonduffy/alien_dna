@@ -2,8 +2,6 @@ package com.robinsonduffy.aliendna.model;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
-import org.apache.commons.lang3.tuple.MutablePair;
-import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.Objects;
 
@@ -85,5 +83,22 @@ public class Trait implements Comparable<Trait> {
     @Override
     public int hashCode() {
         return Objects.hash(this.toString()) * 37;
+    }
+
+    public static Trait fromString(final String traitString) {
+        if (StringUtils.isBlank(traitString)) {
+            throw new IllegalArgumentException("Invalid String");
+        }
+        String piece1 = traitString.substring(0, (traitString.length() / 2));
+        String piece2 = traitString.substring(traitString.length() / 2);
+        if (!StringUtils.equalsIgnoreCase(piece1, piece2)) {
+            throw new IllegalArgumentException("Invalid String");
+        }
+        if (StringUtils.isMixedCase(piece1) || StringUtils.isMixedCase(piece2)) {
+            throw new IllegalArgumentException("Invalid String");
+        }
+        Allele allele1 = StringUtils.isAllUpperCase(piece1) ? Allele.DOMINANT : Allele.RECESSIVE;
+        Allele allele2 = StringUtils.isAllUpperCase(piece2) ? Allele.DOMINANT : Allele.RECESSIVE;
+        return new Trait(piece1, allele1, allele2);
     }
 }

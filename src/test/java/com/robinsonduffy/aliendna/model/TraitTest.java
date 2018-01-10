@@ -144,5 +144,38 @@ public class TraitTest {
         assertEquals(trait.getExpression(), expectedResult);
     }
 
+    @DataProvider(name = "fromStringProvider")
+    public static Object[][] fromStringProvider() {
+        return new Object[][] {
+                {"Aa"},
+                {"AA"},
+                {"aa"},
+                {"AAaa"},
+                {"ABCabc"}
+        };
+    }
+    @Test(dataProvider = "fromStringProvider")
+    public void test_fromString(String traitString) {
+        assertEquals(Trait.fromString(traitString).toString(), traitString);
+    }
+
+    @DataProvider(name = "fromStringBadProvider")
+    public static Object[][] fromStringBadProvider() {
+        return new Object[][] {
+                {"Ab"},
+                {"AAA"},
+                {"ABcabc"},
+                {" "},
+                {" A a"},
+                {null},
+                {""}
+        };
+    }
+    @Test(dataProvider = "fromStringBadProvider",
+            expectedExceptions = {IllegalArgumentException.class})
+    public void test_fromStringBad(String traitString) {
+        Trait.fromString(traitString);
+    }
+
 
 }
