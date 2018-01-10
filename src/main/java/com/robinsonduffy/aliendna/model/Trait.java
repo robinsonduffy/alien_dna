@@ -38,6 +38,14 @@ public class Trait implements Comparable<Trait> {
         return marker;
     };
 
+    public Allele getExpression(){
+        if (alleles.left.equals(Allele.DOMINANT) || alleles.right.equals(Allele.DOMINANT)) {
+            return Allele.DOMINANT;
+        } else {
+            return Allele.RECESSIVE;
+        }
+    }
+
     @Override
     public int compareTo(Trait o) {
         if (this.getMarker().equals(o.getMarker())) {

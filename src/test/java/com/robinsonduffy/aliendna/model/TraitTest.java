@@ -19,7 +19,6 @@ public class TraitTest {
         };
 
     }
-
     @Test(dataProvider = "toStringProvider")
     public void test_toString(String marker, Allele allele1, Allele allele2, String expectedResult){
         final Trait trait = new Trait(marker, allele1, allele2);
@@ -128,6 +127,22 @@ public class TraitTest {
                 new Trait("B", Allele.DOMINANT, Allele.RECESSIVE).hashCode());
     }
 
+    @DataProvider(name = "getExpressionProvider")
+    public static Object[][] getExpressionProvider() {
+
+        return new Object[][] {
+                { "A", Allele.DOMINANT, Allele.DOMINANT, Allele.DOMINANT },
+                { "A", Allele.DOMINANT, Allele.RECESSIVE, Allele.DOMINANT },
+                { "A", Allele.RECESSIVE, Allele.RECESSIVE, Allele.RECESSIVE },
+                { "A", Allele.RECESSIVE, Allele.DOMINANT, Allele.DOMINANT },
+                { "B", Allele.DOMINANT, Allele.RECESSIVE, Allele.DOMINANT }
+        };
+    }
+    @Test(dataProvider = "getExpressionProvider")
+    public void test_getExpression(String marker, Allele allele1, Allele allele2, Allele expectedResult) {
+        final Trait trait = new Trait(marker, allele1, allele2);
+        assertEquals(trait.getExpression(), expectedResult);
+    }
 
 
 }
