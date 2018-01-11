@@ -1,6 +1,9 @@
 package com.robinsonduffy.aliendna.model;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
@@ -69,5 +72,17 @@ public class Sequence {
             newSequence.add(new PunnettSquare(trait1, sequence2.getTrait(trait1.getMarker())).getRandomTrait());
         });
         return newSequence;
+    }
+
+    static public Sequence fromString(String sequenceString) {
+        if (StringUtils.isBlank(sequenceString)) {
+            throw new IllegalArgumentException("Invalid Sequence String");
+        }
+        Sequence sequence = new Sequence();
+        Arrays.stream(sequenceString.split(",")).forEach(traitString -> {
+            String cleanedTrait = traitString.trim().replaceAll(	"[\\[\\]]", "");
+            sequence.add(Trait.fromString(cleanedTrait));
+        });
+        return sequence;
     }
 }

@@ -47,6 +47,13 @@ public class SequenceTest {
         assertEquals(sequence.toString(), "[AA, AAaa, bb]");
     }
 
+    @Test public void test_fromString() {
+        final String testString = "[AA, AAaa, bb]";
+        Sequence sequence = Sequence.fromString(testString);
+
+        assertEquals(sequence.toString(), testString);
+    }
+
     @Test(expectedExceptions = {IllegalArgumentException.class})
     public void test_from_bad1() {
         Trait traitA = new Trait("A");
