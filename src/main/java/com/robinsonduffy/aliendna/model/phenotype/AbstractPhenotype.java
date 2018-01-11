@@ -5,13 +5,7 @@ import com.robinsonduffy.aliendna.model.Sequence;
 
 import org.apache.commons.lang3.tuple.Pair;
 
-import java.util.List;
-
-public abstract class AbstractPhenotype {
-    public abstract String getName();
-    public abstract String getDetails();
-    public abstract List<Pair<String, Allele>> getExpression();
-
+public abstract class AbstractPhenotype implements Phenotype {
     /*
      * This determines if the phenotype is expressed by the sequence
      * (which may include other traits not related to this phenotype)
