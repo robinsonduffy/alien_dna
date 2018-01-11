@@ -168,7 +168,8 @@ public class TraitTest {
                 {" "},
                 {" A a"},
                 {null},
-                {""}
+                {""},
+                {"A"}
         };
     }
     @Test(dataProvider = "fromStringBadProvider",
