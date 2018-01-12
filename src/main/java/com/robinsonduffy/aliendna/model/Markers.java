@@ -13,4 +13,7 @@ public final class Markers {
     public static final String HEIGHT = "J";
     public static final String WEIGHT = "K";
     public static final String ARMS = "L";
+    public static final String BLUE = "M";
+    public static final String RED = "N";
+    public static final String YELLOW = "O";
 }
