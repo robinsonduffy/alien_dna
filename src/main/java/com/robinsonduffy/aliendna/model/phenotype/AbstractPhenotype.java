@@ -3,9 +3,15 @@ package com.robinsonduffy.aliendna.model.phenotype;
 import com.robinsonduffy.aliendna.model.Allele;
 import com.robinsonduffy.aliendna.model.Sequence;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
 public abstract class AbstractPhenotype implements Phenotype {
+    @Override
+    public String getName() {
+        return String.join(" ", StringUtils.splitByCharacterTypeCamelCase(this.getClass().getSimpleName()));
+    }
+
     /*
      * This determines if the phenotype is expressed by the sequence
      * (which may include other traits not related to this phenotype)
