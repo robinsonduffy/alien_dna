@@ -18,4 +18,5 @@ public final class Markers {
     public static final String YELLOW = "O";
     public static final String WINGS = "P";
     public static final String WING_SIZE = "Q";
+    public static final String BELLY = "R";
 }
