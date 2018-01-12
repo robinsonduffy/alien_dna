@@ -10,4 +10,6 @@ public final class Markers {
     public static final String TAIL_LENGTH = "G";
     public static final String TAIL_CURL = "H";
     public static final String TAIL_SPIKES = "I";
+    public static final String HEIGHT = "J";
+    public static final String WEIGHT = "K";
 }
