@@ -1,4 +1,4 @@
-package com.robinsonduffy.aliendna.model.markers;
+package com.robinsonduffy.aliendna.model.genotype.markers;
 
 public enum PlantMarkers implements MarkersEnum {
     PEA_SHAPE("R"),

@@ -1,7 +1,7 @@
 package com.robinsonduffy.aliendna.model.phenotype.plant;
 
 import com.robinsonduffy.aliendna.model.genotype.Allele;
-import com.robinsonduffy.aliendna.model.markers.PlantMarkers;
+import com.robinsonduffy.aliendna.model.genotype.markers.PlantMarkers;
 import com.robinsonduffy.aliendna.model.phenotype.AbstractPhenotype;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
