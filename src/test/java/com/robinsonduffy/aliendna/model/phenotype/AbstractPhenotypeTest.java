@@ -1,8 +1,8 @@
 package com.robinsonduffy.aliendna.model.phenotype;
 
-import com.robinsonduffy.aliendna.model.Allele;
-import com.robinsonduffy.aliendna.model.Sequence;
-import com.robinsonduffy.aliendna.model.Trait;
+import com.robinsonduffy.aliendna.model.genotype.Allele;
+import com.robinsonduffy.aliendna.model.genotype.Sequence;
+import com.robinsonduffy.aliendna.model.genotype.Trait;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.testng.annotations.DataProvider;

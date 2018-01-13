@@ -1,4 +1,4 @@
-package com.robinsonduffy.aliendna.model;
+package com.robinsonduffy.aliendna.model.genotype;
 
 import java.util.ArrayList;
 import java.util.Collections;

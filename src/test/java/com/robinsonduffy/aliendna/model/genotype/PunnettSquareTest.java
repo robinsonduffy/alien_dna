@@ -1,10 +1,11 @@
-package com.robinsonduffy.aliendna.model;
+package com.robinsonduffy.aliendna.model.genotype;
 
+import com.robinsonduffy.aliendna.model.genotype.Allele;
+import com.robinsonduffy.aliendna.model.genotype.PunnettSquare;
+import com.robinsonduffy.aliendna.model.genotype.Trait;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 public class PunnettSquareTest {
 

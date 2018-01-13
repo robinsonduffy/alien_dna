@@ -1,4 +1,4 @@
-package com.robinsonduffy.aliendna.model;
+package com.robinsonduffy.aliendna.model.genotype;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;

@@ -1,5 +1,7 @@
-package com.robinsonduffy.aliendna.model;
+package com.robinsonduffy.aliendna.model.genotype;
 
+import com.robinsonduffy.aliendna.model.genotype.Allele;
+import com.robinsonduffy.aliendna.model.genotype.Trait;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
