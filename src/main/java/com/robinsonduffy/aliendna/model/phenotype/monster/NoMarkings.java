@@ -11,11 +11,6 @@ import java.util.List;
 
 public class NoMarkings extends AbstractPhenotype {
     @Override
-    public String getName() {
-        return "No Markings";
-    }
-
-    @Override
     public String getDetails() {
         return "Has no decorative markings on the body";
     }

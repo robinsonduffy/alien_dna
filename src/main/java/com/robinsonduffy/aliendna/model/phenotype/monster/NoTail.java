@@ -11,11 +11,6 @@ import java.util.List;
 
 public class NoTail extends AbstractPhenotype {
     @Override
-    public String getName() {
-        return "No Tail";
-    }
-
-    @Override
     public String getDetails() {
         return "Does not have a tail";
     }

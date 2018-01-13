@@ -11,11 +11,6 @@ import java.util.List;
 
 public class NoFangs extends AbstractPhenotype {
     @Override
-    public String getName() {
-        return "No Fangs";
-    }
-
-    @Override
     public String getDetails() {
         return "Has no visible fangs";
     }

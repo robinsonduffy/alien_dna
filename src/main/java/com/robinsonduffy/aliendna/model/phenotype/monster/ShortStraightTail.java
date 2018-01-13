@@ -11,11 +11,6 @@ import java.util.List;
 
 public class ShortStraightTail extends AbstractPhenotype {
     @Override
-    public String getName() {
-        return "Short Straight Tail";
-    }
-
-    @Override
     public String getDetails() {
         return "Has a short straight tail";
     }

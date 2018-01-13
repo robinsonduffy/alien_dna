@@ -11,11 +11,6 @@ import java.util.List;
 
 public class Spots extends AbstractPhenotype {
     @Override
-    public String getName() {
-        return "Spots";
-    }
-
-    @Override
     public String getDetails() {
         return "Has spots on the body";
     }

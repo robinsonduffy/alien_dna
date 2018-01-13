@@ -11,11 +11,6 @@ import java.util.List;
 
 public class Skinny extends AbstractPhenotype {
     @Override
-    public String getName() {
-        return "Skinny";
-    }
-
-    @Override
     public String getDetails() {
         return "A skinny creature";
     }

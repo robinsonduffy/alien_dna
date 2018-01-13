@@ -11,11 +11,6 @@ import java.util.List;
 
 public class Stripes extends AbstractPhenotype {
     @Override
-    public String getName() {
-        return "Stripes";
-    }
-
-    @Override
     public String getDetails() {
         return "Has stripes on the body";
     }

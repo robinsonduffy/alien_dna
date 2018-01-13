@@ -11,11 +11,6 @@ import java.util.List;
 
 public class Fat extends AbstractPhenotype {
     @Override
-    public String getName() {
-        return "Fat";
-    }
-
-    @Override
     public String getDetails() {
         return "A fat creature";
     }

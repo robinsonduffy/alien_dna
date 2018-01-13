@@ -11,11 +11,6 @@ import java.util.List;
 
 public class Fangs extends AbstractPhenotype {
     @Override
-    public String getName() {
-        return "Fangs";
-    }
-
-    @Override
     public String getDetails() {
         return "Has Fangs";
     }

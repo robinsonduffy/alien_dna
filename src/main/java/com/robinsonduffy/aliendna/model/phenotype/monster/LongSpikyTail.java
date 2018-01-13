@@ -11,11 +11,6 @@ import java.util.List;
 
 public class LongSpikyTail extends AbstractPhenotype {
     @Override
-    public String getName() {
-        return "Long Spiky Tail";
-    }
-
-    @Override
     public String getDetails() {
         return "Has a long tail with spikes";
     }

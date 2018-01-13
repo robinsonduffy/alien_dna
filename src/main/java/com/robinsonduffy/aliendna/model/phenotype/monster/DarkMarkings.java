@@ -11,11 +11,6 @@ import java.util.List;
 
 public class DarkMarkings extends AbstractPhenotype {
     @Override
-    public String getName() {
-        return "Dark Markings";
-    }
-
-    @Override
     public String getDetails() {
         return "The markings on the body are dark colored";
     }

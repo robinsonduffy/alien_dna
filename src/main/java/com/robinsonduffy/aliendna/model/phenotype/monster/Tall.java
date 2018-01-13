@@ -11,11 +11,6 @@ import java.util.List;
 
 public class Tall extends AbstractPhenotype {
     @Override
-    public String getName() {
-        return "Tall";
-    }
-
-    @Override
     public String getDetails() {
         return "A tall creature";
     }

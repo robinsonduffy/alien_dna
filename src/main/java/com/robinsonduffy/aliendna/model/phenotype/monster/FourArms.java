@@ -11,11 +11,6 @@ import java.util.List;
 
 public class FourArms extends AbstractPhenotype {
     @Override
-    public String getName() {
-        return "Four Arms";
-    }
-
-    @Override
     public String getDetails() {
         return "Has four arms";
     }

@@ -11,11 +11,6 @@ import java.util.List;
 
 public class NoRuff extends AbstractPhenotype {
     @Override
-    public String getName() {
-        return "No Ruff";
-    }
-
-    @Override
     public String getDetails() {
         return "Has no ruff around the neck";
     }
