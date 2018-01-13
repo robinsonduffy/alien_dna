@@ -1,7 +1,7 @@
 package com.robinsonduffy.aliendna.model.phenotype.monster;
 
 import com.robinsonduffy.aliendna.model.Allele;
-import com.robinsonduffy.aliendna.model.Markers;
+import com.robinsonduffy.aliendna.model.markers.MonsterMarkers;
 import com.robinsonduffy.aliendna.model.phenotype.AbstractPhenotype;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
@@ -18,9 +18,9 @@ public class OrangeSkin extends AbstractPhenotype {
     @Override
     public List<Pair<String, Allele>> getExpression() {
         return Arrays.asList(
-                new ImmutablePair<>(Markers.BLUE, Allele.RECESSIVE),
-                new ImmutablePair<>(Markers.RED, Allele.DOMINANT),
-                new ImmutablePair<>(Markers.YELLOW, Allele.DOMINANT)
+                new ImmutablePair<>(MonsterMarkers.BLUE.code(), Allele.RECESSIVE),
+                new ImmutablePair<>(MonsterMarkers.RED.code(), Allele.DOMINANT),
+                new ImmutablePair<>(MonsterMarkers.YELLOW.code(), Allele.DOMINANT)
         );
     }
 }

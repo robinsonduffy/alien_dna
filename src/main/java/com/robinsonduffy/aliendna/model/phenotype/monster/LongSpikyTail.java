@@ -1,7 +1,7 @@
 package com.robinsonduffy.aliendna.model.phenotype.monster;
 
 import com.robinsonduffy.aliendna.model.Allele;
-import com.robinsonduffy.aliendna.model.Markers;
+import com.robinsonduffy.aliendna.model.markers.MonsterMarkers;
 import com.robinsonduffy.aliendna.model.phenotype.AbstractPhenotype;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
@@ -23,9 +23,9 @@ public class LongSpikyTail extends AbstractPhenotype {
     @Override
     public List<Pair<String, Allele>> getExpression() {
         return Arrays.asList(
-                new ImmutablePair<>(Markers.TAIL, Allele.DOMINANT),
-                new ImmutablePair<>(Markers.TAIL_LENGTH, Allele.DOMINANT),
-                new ImmutablePair<>(Markers.TAIL_SPIKES, Allele.RECESSIVE)
+                new ImmutablePair<>(MonsterMarkers.TAIL.code(), Allele.DOMINANT),
+                new ImmutablePair<>(MonsterMarkers.TAIL_LENGTH.code(), Allele.DOMINANT),
+                new ImmutablePair<>(MonsterMarkers.TAIL_SPIKES.code(), Allele.RECESSIVE)
         );
     }
 }
