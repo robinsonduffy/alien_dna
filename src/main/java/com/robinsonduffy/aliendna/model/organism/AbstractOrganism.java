@@ -10,7 +10,7 @@ import java.util.Set;
 public class AbstractOrganism implements Organism {
     private Sequence sequence;
 
-    protected AbstractOrganism(Sequence sequence) {
+    public AbstractOrganism(Sequence sequence) {
         this.sequence = sequence;
     }
 
