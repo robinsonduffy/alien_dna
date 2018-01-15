@@ -114,11 +114,6 @@ public class AbstractPhenotypeTest {
 
     class TestPhenotype extends AbstractPhenotype {
         @Override
-        public String getName() {
-            return null;
-        }
-
-        @Override
         public String getDetails() {
             return null;
         }
