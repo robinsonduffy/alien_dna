@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 import java.util.List;
 
-@Component
+@Component("tallMonster")
 @Qualifier("MonsterPhenotype")
 public class Tall extends AbstractPhenotype {
     @Override
