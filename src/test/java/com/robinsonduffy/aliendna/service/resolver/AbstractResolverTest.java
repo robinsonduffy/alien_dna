@@ -1,4 +1,4 @@
-package com.robinsonduffy.aliendna.model.resolver;
+package com.robinsonduffy.aliendna.service.resolver;
 
 import com.robinsonduffy.aliendna.model.genotype.Allele;
 import com.robinsonduffy.aliendna.model.genotype.Sequence;

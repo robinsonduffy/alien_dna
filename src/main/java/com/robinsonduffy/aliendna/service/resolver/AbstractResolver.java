@@ -1,4 +1,4 @@
-package com.robinsonduffy.aliendna.model.resolver;
+package com.robinsonduffy.aliendna.service.resolver;
 
 import com.robinsonduffy.aliendna.model.organism.AbstractOrganism;
 import com.robinsonduffy.aliendna.model.phenotype.Phenotype;

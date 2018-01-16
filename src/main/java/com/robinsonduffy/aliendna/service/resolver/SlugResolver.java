@@ -1,6 +1,6 @@
-package com.robinsonduffy.aliendna.model.resolver;
+package com.robinsonduffy.aliendna.service.resolver;
 
-import com.robinsonduffy.aliendna.model.organism.Plant;
+import com.robinsonduffy.aliendna.model.organism.Slug;
 import com.robinsonduffy.aliendna.model.phenotype.Phenotype;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class PlantResolver extends AbstractResolver<Plant> {
+public class SlugResolver extends AbstractResolver<Slug> {
     @Autowired
-    public PlantResolver(@Qualifier("PlantPhenotype") List<Phenotype> phenotypes) {
+    public SlugResolver(@Qualifier("SlugPhenotype") List<Phenotype> phenotypes) {
         super(phenotypes);
     }
 }
