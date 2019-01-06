@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 @DiscriminatorValue("slug")
 public class Slug extends AbstractOrganism {
     Slug() {}
-    
+
     public Slug(Sequence sequence) {
         super(sequence);
     }
